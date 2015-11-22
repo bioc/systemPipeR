@@ -1,4 +1,8 @@
 changelog
+    version 1.4.5
+        - fixed extendylim in plotfeatureCoverage()
+        - fixed error in featureCoverage when txdb/grl was created from gff with scaffolds not containing any genes
+    
     version 1.4.0 - 1.4.4
         - doc updates
         - git mirror setup
