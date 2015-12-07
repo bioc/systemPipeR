@@ -75,6 +75,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 #                      verbose=TRUE)
 
 ## ----eval=FALSE------------------------------------------------------------------------------
+#  library(ggplot2); library(grid)
 #  fc <- featuretypeCounts(bfl=BamFileList(outpaths(args), yieldSize=50000), grl=feat,
 #                          singleEnd=TRUE, readlength=NULL, type="data.frame")
 #  p <- plotfeaturetypeCounts(x=fc, graphicsfile="results/featureCounts.pdf", graphicsformat="pdf",
@@ -107,6 +108,19 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 #  feat <- c(feat, GRangesList("uORF"=unlist(grl_scaled)))
 
 ## ----eval=FALSE------------------------------------------------------------------------------
+#  feat <- genFeatures(txdb, featuretype="intergenic", reduce_ranges=TRUE)
+#  intergenic <- feat$intergenic
+#  strand(intergenic) <- "+"
+#  dna <- getSeq(FaFile(genome), intergenic)
+#  names(dna) <- mcols(intergenic)$feature_by
+#  sorf <- predORF(dna, n="all", mode="orf", longest_disjoint=TRUE, strand="both")
+#  sorf <- sorf[width(sorf) > 60] # Remove sORFs below length cutoff, here 60bp
+#  intergenic <- split(intergenic, mcols(intergenic)$feature_by)
+#  grl_scaled_intergenic <- scaleRanges(subject=intergenic, query=sorf, type="sORF", verbose=TRUE)
+#  export.gff3(unlist(grl_scaled_intergenic), "sorf.gff")
+#  translate(getSeq(FaFile(genome), unlist(grl_scaled_intergenic)))
+
+## ----eval=FALSE------------------------------------------------------------------------------
 #  grl <- cdsBy(txdb, "tx", use.names=TRUE)
 #  fcov <- featureCoverage(bfl=BamFileList(outpaths(args)[1:2]), grl=grl[1:4], resizereads=NULL,
 #                           readlengthrange=NULL, Nbins=20, method=mean, fixedmatrix=FALSE,
@@ -121,6 +135,7 @@ read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), head
 #  plotfeatureCoverage(covMA=fcov, method=mean, scales="fixed", extendylim=2, scale_count_val=10^6)
 
 ## ----eval=FALSE------------------------------------------------------------------------------
+#  library(ggplot2); library(grid)
 #  fcov <- featureCoverage(bfl=BamFileList(outpaths(args)[1:2]), grl=grl[1:4], resizereads=NULL,
 #                           readlengthrange=NULL, Nbins=20, method=mean, fixedmatrix=TRUE,
 #                           resizefeatures=TRUE, upstream=20, downstream=20,
