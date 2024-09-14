@@ -175,8 +175,8 @@ issues.
 \subsection{Other output formats}{
 
 The plot rendering uses \code{htmlwidgets}, which generates an interactive HTML page.
-Directly save the plot object into image formats, e.g. \code{png} is not possible.
-Here are a few options to save to the image formats:
+Saving these plots directly to standard image files, such as \code{png}, is not possible.
+However, a few workarounds exist to save to these image formats:
 
 \itemize{
   \item 1: use \code{webshot2::webshot} function.
