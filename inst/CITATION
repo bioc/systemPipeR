@@ -1,16 +1,42 @@
-citEntry(entry="article",
-         title = "systemPipeR: NGS workflow and report generation environment",
-         author = personList( as.person("Tyler W. H. Backman"),
-                              as.person("Thomas Girke")),
-         year = 2016,
-         month = "sep",
-         publisher = "Springer Science and Business Media {LLC}",
-         journal = "BMC Bioinformatics",
-         doi = "10.1186/s12859-016-1241-0",
-         url = "https://doi.org/10.1186/s12859-016-1241-0",
-         volume = 17,
-         number = 1,
-         textVersion = 
-         paste("Backman TWH, Girke T (2016)", 
-               "systemPipeR: NGS workflow and report generation environment.",
-                "BMC Bioinformatics 17 (1), doi: 10.1186/s12859-016-1241-0."))
+citHeader(
+    "To cite systemPipeR in publications, please use the first reference",
+    "below, which describes the current systemPipeR workflow management",
+    "system. The second reference is the original systemPipeR publication."
+)
+
+bibentry(
+    bibtype = "Article",
+    title = paste(
+        "systemPipeR: a multipurpose workflow management system",
+        "for reproducible data analysis"
+    ),
+    author = c(
+        person("Le", "Zhang"),
+        person("Daniela", "Cassol"),
+        person("Brendan", "Gongol"),
+        person("Thomas", "Girke")
+    ),
+    journal = "NAR Genomics and Bioinformatics",
+    year = "2026",
+    volume = "8",
+    number = "2",
+    pages = "lqag032",
+    doi = "10.1093/nargab/lqag032",
+    url = "https://doi.org/10.1093/nargab/lqag032"
+)
+
+bibentry(
+    bibtype = "Article",
+    title = "systemPipeR: NGS workflow and report generation environment",
+    author = c(
+        person(c("Tyler", "W.", "H."), "Backman"),
+        person("Thomas", "Girke")
+    ),
+    journal = "BMC Bioinformatics",
+    year = "2016",
+    volume = "17",
+    number = "1",
+    pages = "388",
+    doi = "10.1186/s12859-016-1241-0",
+    url = "https://doi.org/10.1186/s12859-016-1241-0"
+)
